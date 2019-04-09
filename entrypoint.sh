@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 echo "-----------------------------------------------------------"
 echo "Processing $GITHUB_EVENT_PATH"
