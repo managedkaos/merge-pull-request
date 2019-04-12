@@ -11,9 +11,9 @@ env
 jq . < $GITHUB_EVENT_PATH
 
 echo "### checking for PR URL"
-(jq -r ".issue.pull_request.url" "$GITHUB_EVENT_PATH") || exit 78
+(jq -r ".pull_request.issue.href" "$GITHUB_EVENT_PATH") || exit 78
 
 echo "### getting the PR number"
-PR_NUMBER=$(jq -r ".issue.number" "$GITHUB_EVENT_PATH")
+PR_NUMBER=$(jq -r ".number" "$GITHUB_EVENT_PATH")
 
 echo "### $PR_NUMBER"
