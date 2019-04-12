@@ -3,7 +3,7 @@
 This Action merges pull requests and deletes the branch associated with the PR.
 
 # Secrets
-- N/A
+- `GITHUB_TOKEN` - _Required_ Allows the Action to authenticte with the GitHub API.
 
 # Environment Variables
 - N/A
