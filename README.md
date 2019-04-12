@@ -15,6 +15,7 @@ This Action merges pull requests and deletes the branch associated with the PR.
 Here's an example workflow that uses the Merginator.  The workflow is triggered by a `PULL_REQUEST` and checks for the following before merging the PR:
 - The PR author is one of "managedkaos" or "octocat"
 - The code associted with the PR passes `pylint app.py`
+- The PR has been approved by the [Auto Approve Action](https://github.com/marketplace/actions/auto-approve)
 
 ```
 workflow "The Main Workflow REAL DEAL" {
