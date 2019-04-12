@@ -12,7 +12,7 @@ This Action merges pull requests.
 - N/A
 
 # Examples
-Here's an example workflow that uses the Merginator action.  The workflow is triggered by a `PULL_REQUEST` and checks for the following before merging the PR:
+Here's an example workflow that uses the Merginator.  The workflow is triggered by a `PULL_REQUEST` and checks for the following before merging the PR:
 - The PR author is one of "managedkaos" or "octocat"
 - The code associted with the PR passes `pylint app.py`
 
