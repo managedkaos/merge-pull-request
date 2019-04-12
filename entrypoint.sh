@@ -42,3 +42,4 @@ git fetch origin $HEAD_BRANCH
 git checkout -b $HEAD_BRANCH origin/$HEAD_BRANCH
 git merge $BRANCH_TO_MERGE --no-edit
 git push origin $HEAD_BRANCH
+git push origin --delete BRANCH_TO_MERGE
