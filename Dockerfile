@@ -7,10 +7,10 @@ LABEL "com.github.actions.color"="orange"
 
 RUN apk add --no-cache \
         bash \
-        httpie \
+        git \
         jq && \
         which bash && \
-        which http && \
+        which git && \
         which jq
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
