@@ -1,6 +1,6 @@
 # Merginator
 
-This Action merges pull requests.
+This Action merges pull requests and deletes the branch associated with the PR.
 
 # Secrets
 - N/A
