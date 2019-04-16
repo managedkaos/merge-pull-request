@@ -1,6 +1,8 @@
 FROM alpine
 
-LABEL "com.github.actions.name"="Merginator"
+LABEL "maintainer"="managedkaos"
+LABEL "repository"="https://github.com/managedkaos/print-env"
+LABEL "com.github.actions.name"="Pull Request Merginator"
 LABEL "com.github.actions.description"="Merges a pull request."
 LABEL "com.github.actions.icon"="git-merge"
 LABEL "com.github.actions.color"="orange"
