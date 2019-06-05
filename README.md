@@ -7,6 +7,7 @@ This Action merges pull requests and deletes the branch associated with the PR.
 
 # Environment Variables
 - N/A
+- N/A
 
 # Arguments
 - N/A
