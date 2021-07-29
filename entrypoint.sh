@@ -25,7 +25,7 @@ echo "### HEAD_BRANCH     = ${HEAD_BRANCH}"
 echo "### BRANCH_TO_MERGE = ${BRANCH_TO_MERGE}"
 
 echo "### Merging the Pull Request"
-git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@${GITHUB_HOST:-github.com}/${GITHUB_REPOSITORY}.git
 git config --global user.email "actions@github.com"
 git config --global user.name "GitHub Merge Action"
 
