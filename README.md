@@ -4,6 +4,7 @@ This Action merges pull requests and deletes the branch associated with the PR.
 
 # Environment Variables
 - `GITHUB_TOKEN` - _Required_ Allows the Action to authenticte with the GitHub API.
+- `GITHUB_HOST` - _Default: github.com_ Set it to `github.enterprise.com` to run on GHES
 
 # Examples
 Here's an example workflow that uses the Merginator.  The workflow is triggered by a `PULL_REQUEST` being opened or reopened and checks for the following before merging the PR:
