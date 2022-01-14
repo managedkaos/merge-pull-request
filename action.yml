@@ -1,4 +1,4 @@
-name: 'Merginator'
+name: 'Merginator 2'
 description: 'This Action merges pull requests and deletes the branch associated with the PR.'
 runs:
    using: 'docker'
