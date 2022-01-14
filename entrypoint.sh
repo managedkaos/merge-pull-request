@@ -16,7 +16,7 @@ echo "### Making sure this is a pull prequest by looking for the PR URL"
 (jq -r ".pull_request.issue.href" "$GITHUB_EVENT_PATH") || exit 78
 
 echo "### Getting the head branch"
-HEAD_BRANCH=$(jq -r .pull_request.base.repo.default_branch "$GITHUB_EVENT_PATH")
+HEAD_BRANCH=$(jq -r .pull_request.base.ref "$GITHUB_EVENT_PATH")
 
 echo "### Getting branch to merge"
 BRANCH_TO_MERGE=$(jq -r .pull_request.head.ref "$GITHUB_EVENT_PATH")
