@@ -10,7 +10,9 @@ echo "### Printing environment"
 env
 
 #temporary fix for unsafe bug in git
-git config --global --add safe.directory $GITHUB_WORKSPACE
+# git config --global --add safe.directory $GITHUB_WORKSPACE
+_GITHUB_REPO="${GITHUB_REPOSITORY##*/}"
+export GITHUB_WORKSPACE="$HOME/work/$_GITHUB_REPO/$_GITHUB_REPO"
 
 echo "### Printing $GITHUB_EVENT_PATH"
 jq . "$GITHUB_EVENT_PATH"
