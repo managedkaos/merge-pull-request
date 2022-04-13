@@ -9,10 +9,9 @@ echo "-----------------------------------------------------------"
 echo "### Printing environment"
 env
 
-#temporary fix for unsafe bug in git
-# git config --global --add safe.directory $GITHUB_WORKSPACE
-_GITHUB_REPO="${GITHUB_REPOSITORY##*/}"
-export GITHUB_WORKSPACE="$HOME/work/$_GITHUB_REPO/$_GITHUB_REPO"
+# Fix for unsafe path issue https://github.blog/2022-04-12-git-security-vulnerability-announced/
+# in git when running inside docker container
+git config --global --add safe.directory /github/workspace
 
 echo "### Printing $GITHUB_EVENT_PATH"
 jq . "$GITHUB_EVENT_PATH"
