@@ -9,6 +9,9 @@ echo "-----------------------------------------------------------"
 echo "### Printing environment"
 env
 
+#temporary fix for unsafe bug in git
+git config --global --add safe.directory $GITHUB_WORKSPACE
+
 echo "### Printing $GITHUB_EVENT_PATH"
 jq . "$GITHUB_EVENT_PATH"
 
