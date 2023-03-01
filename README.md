@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3.3.0
 
     - name: Auto Approve
       uses: hmarr/auto-approve-action@v3.1.0
