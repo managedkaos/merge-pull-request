@@ -24,37 +24,37 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    
-    - uses: actions/checkout@v1
-    
-    - uses: actions/setup-python@v1
+
+    - uses: actions/checkout@v3.3.0
+
+    - uses: actions/setup-python@v4.5.0
       with:
-        python-version: 3.8
-    
+        python-version: 3.11
+
     - name: flake8 and pylint
       run: |
         pip install -r requirements.txt
         flake8 --ignore=E501,E231 *.py tests/*.py
         pylint --errors-only --disable=C0301 --disable=C0326 *.py tests/*.py
-    
+
     - name: unit test
       run: python -m unittest --verbose --failfast
-  
+
   merge:
     if: github.actor == 'automate6500' || github.actor == 'octocat'
     needs: [lint]
     runs-on: ubuntu-latest
     steps:
-    
+
     - uses: actions/checkout@v1
-    
-    - uses: hmarr/auto-approve-action@v2.0.0
+
+    - name: Auto Approve
+      uses: hmarr/auto-approve-action@v3.1.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: Pull Request Merginator
-      uses: managedkaos/merge-pull-request@v1.2
+      uses: managedkaos/merge-pull-request@v2.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 ```

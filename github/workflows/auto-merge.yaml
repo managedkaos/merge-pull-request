@@ -1,0 +1,32 @@
+name: Auto Merge Owner
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3.3.0
+    - name: ShellCheck
+      uses: ludeeus/action-shellcheck@2.0.0
+
+  merge:
+    if: github.actor == 'managedkaos'
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3.3.0
+
+    - name: Auto Approve
+      uses: hmarr/auto-approve-action@v3.1.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Pull Request Merginator
+      uses: managedkaos/merge-pull-request@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
