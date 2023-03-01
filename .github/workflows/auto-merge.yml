@@ -3,6 +3,7 @@ name: Auto Merge Owner
 on:
   pull_request:
     types: [opened, reopened]
+  workflow_dispatch:
 
 jobs:
   lint:
