@@ -54,7 +54,7 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Pull Request Merginator
-      uses: managedkaos/merge-pull-request@v2.2
+      uses: managedkaos/merge-pull-request@v2.2.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
