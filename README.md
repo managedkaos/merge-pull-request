@@ -47,13 +47,14 @@ jobs:
     steps:
     
     - uses: actions/checkout@v1
-    
-    - uses: hmarr/auto-approve-action@v2.0.0
+
+    - name: Auto Approve
+      uses: hmarr/auto-approve-action@v3.1.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Pull Request Merginator
-      uses: managedkaos/merge-pull-request@v1.2
+      uses: managedkaos/merge-pull-request@v2.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
